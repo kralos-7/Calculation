@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Demo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+	<div class="container">
+		
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<h2>Comparativo Compró o Rento?</h2>
+				</div>
+			</div>
+		</nav>	
+	
+	</br></br></br></br></br>
+		
+		<!-- Resultado -->
+		<div class="row">
+			<div class="col-xs-6"> <h3 class="text-center">RESULTADO</h3> </div>
+			<div class="col-xs-6"> <div id="_Resultado" class="alert alert-success text-center"> SE DEBE COMPRAR </div> </div>
+		</div>		
+		
+		<!-- Resultado -->
+
+	</br></br>
+	
+		<!-- Cuerpo -->		
+		<div class="row">
+			<!-- Información -->
+			<div class="col-xs-12 col-md-8">
+				<div class="row">
+					
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs">
+					  <li class="active"><a href="#comprar" data-toggle="tab">COMPRAR</a></li>
+					  <li><a href="#rentar" data-toggle="tab">RENTAR</a></li>
+					</ul>
+					<!-- Nav tabs -->
+
+
+					<!-- Navs Contenido -->
+					<div class="tab-content">
+											
+					  <!-- Navs COMPRAR -->
+					  <div class="tab-pane fade in active" id="comprar">					  
+				
+					</br>
+					
+					<!-- _Precio_Casa -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Precio de la casa </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_preciocasa" type="text" onchange="calcular()"/> 
+								</div>
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Precio_Casa" readonly type="text" class="form-control" data-toggle="P_casa" title="máximo 700,000 Udis aprox 3,850,000 pesos">
+								</div>										
+							</div>																					
+						</div>
+					</div>																
+					<!-- _Precio_Casa -->	
+  					  					
+					<!-- _Tiempo_estancia -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Tiempo estimado de estancia </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">								
+									<input id="slider_tiempoestancia" type="text" onchange="calcular()"/> 
+								</div>
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+									<input id="_Tiempo_estancia" readonly type="text" class="form-control" data-toggle="T_estancia" title="máximo 30 años">
+									<span class="input-group-addon">Años</span>
+								</div>		
+							</div>																					
+						</div>
+					</div>																					
+					<!-- _Tiempo_estancia -->	
+										
+					</br>
+					<h3 class="text-center">Hipoteca</h3>
+					
+					</br>
+					<!-- _Tasa_interes -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Tasa de interés anual Fija </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_tasainteres" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Tasa_interes" readonly type="text" class="form-control" data-toggle="T_interes" title=" ¿qué coloco aquí? ">
+								  <span class="input-group-addon">%</span>
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Tasa_interes -->	
+					
+					<!-- _Enganche -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Enganche </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_enganche" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+									<input id="_Enganche" readonly type="text" class="form-control" data-toggle="enganche" title=" ¿qué coloco aquí? ">
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Enganche -->	
+					
+					<!-- _Monto_credito -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Monto de crédito </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_montocredito" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Monto_credito" readonly type="text" class="form-control" data-toggle="M_credito" title=" ¿qué coloco aquí? ">								  
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Monto_credito -->	
+					
+					<!-- _Plazo -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Plazo </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_plazo" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Plazo" readonly type="text" class="form-control" data-toggle="plazo" title="máximo 30 años">
+								  <span class="input-group-addon">Años</span>
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Plazo -->
+
+					<!-- _Comision_apertura -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Comisión de apertura </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_comisionapertura" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Comision_apertura" readonly type="text" class="form-control" data-toggle="C_apertura" title="% del crédito">
+								  <span class="input-group-addon">%</span>
+								</div>		
+								</br>
+								<label>Del monto de crédito</label>
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Comision_apertura -->
+
+					<!-- _Costo_escrituracion -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Costo de escrituración </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_costoescrituracion" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Costo_escrituracion" readonly type="text" class="form-control" data-toggle="C_escrituracion" title="% del precio de la casa">
+								  <span class="input-group-addon">%</span>
+								</div>		
+								</br>
+								<label>Del precio de la casa</label>
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Costo_escrituracion -->
+
+					</br>
+					<h3 class="text-center">Plusvalía de la casa</h3>
+
+					</br>
+					<!-- _Incremento_casa -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Incremento anual del precio de la casa </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_incrementopreciocasa" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Incremento_casa" readonly type="text" class="form-control" data-toggle="I_casa" title="Asume Inflación">
+								  <span class="input-group-addon">% Anual</span>
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Incremento_casa -->	
+					
+					<!-- _Incremento_renta -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Incremento anual de la renta </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_incrementorenta" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Incremento_renta" readonly type="text" class="form-control" data-toggle="I_renta" title="Asume Inflación">
+								  <span class="input-group-addon">% Anual</span>
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Incremento_renta -->	
+					
+					<!-- _Tasa_banco -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Tasa que te paga el banco (aprox. cetes) </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_tasapagobanco" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Tasa_banco" readonly type="text" class="form-control" data-toggle="T_banco" title=" ¿qué coloco aquí? ">
+								  <span class="input-group-addon">% Anual</span>
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Tasa_banco -->	
+					
+					<!-- _Inflacion_estimada -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Inflación estimada </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_inflacionestimada" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Inflacion_estimada" readonly type="text" class="form-control" data-toggle="I_estimada" title="máximo 30 años">
+								  <span class="input-group-addon">% Anual</span>
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Inflacion_estimada -->
+
+					</br>
+					<h3 class="text-center">Impuestos</h3>
+
+					</br>
+					<!-- _Impuestos_venta_casa -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Impuestos sobre la propiedad por venta de la casa </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_impuestosventacasa" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Impuestos_venta_casa" readonly type="text" class="form-control" data-toggle="I_venta_casa" title="% (No aplica por valores menos de 700,000 UDIs)">
+								  <span class="input-group-addon">%</span>
+								</div>		
+								</br>
+								<label>(No aplica por valores menos de 700,000 UDIs)</label>
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Impuestos_venta_casa -->	
+					
+					<!-- _Deducira_intereses -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Deducirá intereses fiscalmente </h3>
+						</div>
+						<div class="panel-body">			
+							<div class="col-md-9 col-md-push-3">
+							</div>				
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+										<select id="_Deducira_intereses" class="form-control input-sm" onchange="calcular()">
+											<option value="Si" selected="selected">Si</option>
+											<option value="No">No</option>
+										</select>									
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Deducira_intereses -->	
+					
+					<!-- _Tasa_Impuestos -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Tasa de Impuestos efectiva pagada (para deducir) </h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_tasaimpuestos" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Tasa_Impuestos" readonly type="text" class="form-control" data-toggle="T_Impuestos" title=" ¿qué coloco aquí? ">
+								  <span class="input-group-addon">%</span>								  
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Tasa_Impuestos -->	
+					
+					<!-- _Costo_vender_casa -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Costos de vender la casa <h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_costovendercasa" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Costo_vender_casa" readonly type="text" class="form-control" data-toggle="C_vender_casa" title="% de Precio de la casa">
+								  <span class="input-group-addon">En porcentaje</span>
+								</div>		
+								</br>
+								<label>Del precio de la casa</label>								
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Costo_vender_casa -->	
+					
+					</br>
+					<h3 class="text-center">Costos de mantenimiento</h3>
+
+					</br>
+					<!-- _Mantenimiento_1_casa -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Mantenimiento/renovación 1er año de la casa <h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_mantenimiento1casa" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Mantenimiento_1_casa" readonly type="text" class="form-control" data-toggle="M_1_casa" title=" ¿qué coloco aquí? ">
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Mantenimiento_1_casa -->	
+					
+					<!-- _Mantenimiento_Anual_casa -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Mantenimiento anual de la casa <h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_mantenimientoanualcasa" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Mantenimiento_Anual_casa" readonly type="text" class="form-control" data-toggle="M_Anual_casa" title=" ¿qué coloco aquí? ">
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Mantenimiento_Anual_casa -->	
+
+					</div>
+					<!-- Navs COMPRAR -->					
+
+  				    <!-- Navs RENTAR -->
+					<div class="tab-pane fade" id="rentar">
+
+					</br>
+					<!-- _Meses_deposito -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Meses de depósito inicial <h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_mesesdeposito" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Meses_deposito" readonly type="text" class="form-control" data-toggle="M_deposito" title=" ¿qué coloco aquí? ">
+								  <span class="input-group-addon">Meses</span>
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Meses_deposito -->	
+  					
+					<!-- _Renta_mensual -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Renta mensual de habitación rentada <h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_rentamensual" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Renta_mensual" readonly type="text" class="form-control" data-toggle="R_mensual" title=" ¿qué coloco aquí? ">
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Renta_mensual -->	
+
+					<!-- _Mantenimiento_mensual -->	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Mantenimiento mensual comunual de habitación rentada <h3>
+						</div>
+						<div class="panel-body">							
+							<div class="col-md-9 col-md-push-3">
+								<div class="well well-sm">
+									<input id="slider_mantenimientomensual" type="text" onchange="calcular()"/> 
+								</div>														
+							</div>
+							<div class="col-md-3 col-md-pull-9">
+								<div class="input-group">							
+								  <input id="_Mantenimiento_mensual" readonly type="text" class="form-control" data-toggle="M_mensual" title=" ¿qué coloco aquí? ">
+								</div>		
+							</div>																					
+						</div>
+					</div>																										
+					<!-- _Mantenimiento_mensual -->	
+
+					</div>
+					<!-- Navs RENTAR -->
+								
+					</div>
+					<!-- Navs Contenido -->
+
+
+				</div>
+			</div>
+			<!-- Información -->
+			
+			<!-- Gráfica -->			
+			<div class="col-xs-6 col-md-4">
+				<!-- Flujo -->
+				<div class="panel panel-primary">
+					<div class="panel-heading">Gráfica de Flujo</div>
+					<div class="panel-body">
+						<canvas width="10" height="30"></canvas>	
+						<canvas id="cvs" width="300" height="300"></canvas>						
+					</div>
+				</div>				
+				<!-- Flujo -->
+				
+				<!-- Supuestos -->				
+				<div class="panel panel-info">
+      				<div class="panel-heading">Supuestos</div>
+      				<!--
+      				<div class="panel-body">
+					</div>
+					-->
+					<ul class="list-group">
+					  <li class="list-group-item">
+						La familia que renta no se muda en el plazo que dura el Crédito Hipotecario.
+					  </li>
+					  <li class="list-group-item">
+						  Está implícito que el inmueble que se compra es equivalente en m2 y servicios al que se renta.
+					  </li>
+					</ul>																	
+    		    </div>				
+				<!-- Supuestos -->				
+			</div>				
+			<!-- Gráfica -->			
+
+		</div>	
+		<!-- Cuerpo -->
+
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+
+	</div>
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquerys.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<!-- accounting.js -->
+    <script src="js/accounting.js" type="text/javascript"></script>
+    <!-- CanvasJS -->    
+	<script src="RGraph/RGraph.common.core.js"></script>
+	<script src="RGraph/RGraph.bar.js"></script>	
+	<script src="RGraph/RGraph.rose.js"></script>	
+    <!-- Code RUN -->    	
+    <script src="code.js" type="text/javascript"></script>
+	<script src="js/bootstrap-slider.js"></script>
+	<script src="js/bootstrap-slider.min.js"></script>
+  </body>
+</html>

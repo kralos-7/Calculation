@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Demo PAGOS</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap-slider.css" rel="stylesheet">
+    <link href="../css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Decorando los datos -->
+	<link href="elementos.css" rel="stylesheet">
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+	<div class="floating-imagen">
+		<p id="status">Finanzas Sanas :)</p>
+		<p id="diferencia"></p>
+	</div>
+	  		
+	<!-- Contenedor Principal -->		
+	<div class="container">
+						
+		<div class="masthead">
+			<h3 class="text-muted">Distribución de Gastos</h3>
+		</div>
+      
+		<div class="col-md-12 col-sm-4">			  
+			<!-- _Ingreso_Mensual -->
+			<div class="panel panel-success" id="_Resultado">
+				<div class="panel-heading">
+					<h3 class="panel-title"> Ingreso Mensual </h3>
+				</div>
+				<div class="panel-body">							
+					<div class="col-md-9 col-md-push-3">
+						<div class="well well-sm">
+							<input id="slider_ingresomensual" type="text" onchange="calcular()"/> 
+						</div>
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="input-group">							
+							<input id="_Ingreso_Mensual" readonly type="text" class="form-control" data-toggle="I_mensual" title="Salario Neto">
+						</div>										
+					</div>																					
+				</div>
+			</div>																
+			<!-- _Ingreso_Mensual -->				
+		</div>			
+
+		<!-- Cuerpo -->				
+		<div class="row">
+
+			<!-- Columna 1 CONCEPTOS DE GASTOS -->
+			<div class="col-xs-12 col-sm-6 col-md-8" id="Conceptos">
+				
+				<!-- _ISR -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"> ISR - Mensuales </h3>
+					</div>
+					<div class="panel-body">				
+						<div class="row">			
+							<div class="col-xs-6">
+								<div class="input-group">							
+									<input id="_ISR" readonly type="text" class="form-control" data-toggle="_isr" title="ISR">
+								</div>										
+							</div>
+							<div class="col-xs-6">
+								<div class="well well-sm">
+									<center><h4 id="info_isr">Info</h4></center>
+								</div>								
+							</div>																					
+						</div>
+					</div>
+					<div class="panel-footer">
+						Tablas ISR 2016 Mensuales
+					</div>
+				</div>																
+				<!-- _ISR -->
+
+				<!-- _Alimentacion -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"> Alimentación </h3>
+					</div>
+					<div class="panel-body">				
+						<div class="row">			
+							<div class="col-xs-6">
+								<div class="input-group">							
+									<input id="_Alimentacion" readonly type="text" class="form-control" data-toggle="_Alimentacion" title="Alimentacion">
+								</div>										
+							</div>
+							<div class="col-xs-6">
+								<div class="well well-sm">
+									<input id="slider_Alimentacion" type="text" onchange="calcular_Todo()"/> 
+								</div>								
+							</div>																					
+						</div>
+					</div>
+					<div class="panel-footer">
+						<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" 
+							title="Tips" 
+							data-content="Comer en casa, Tener una dieta">
+							35% luego de quitar el ISR
+						</a>						
+					</div>					
+				</div>																
+				<!-- _Alimentacion -->
+				
+				<!-- _Telefonia -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"> Telefonía </h3>
+					</div>
+					<div class="panel-body">				
+						<div class="row">			
+							<div class="col-xs-6">
+								<div class="input-group">							
+									<input id="_Telefonia" readonly type="text" class="form-control" data-toggle="_Telefonia" title="Telefonia">
+								</div>										
+							</div>
+							<div class="col-xs-6">
+								<div class="well well-sm">
+									<input id="slider_Telefonia" type="text" onchange="calcular_Todo()"/> 
+								</div>								
+							</div>																					
+						</div>
+					</div>
+					<div class="panel-footer">
+						<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" 
+							title="Tips" 
+							data-content="Contratar un plan, Aprovechar el WiFi">
+							10% luego de quitar el ISR
+						</a>						
+					</div>										
+				</div>																
+				<!-- _Telefonia -->
+
+				<!-- _Entretenimiento -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"> Entretenimiento </h3>
+					</div>
+					<div class="panel-body">				
+						<div class="row">			
+							<div class="col-xs-6">
+								<div class="input-group">							
+									<input id="_Entretenimiento" readonly type="text" class="form-control" data-toggle="_Entretenimiento" title="Entretenimiento">
+								</div>										
+							</div>
+							<div class="col-xs-6">
+								<div class="well well-sm">
+									<input id="slider_Entretenimiento" type="text" onchange="calcular_Todo()"/> 
+								</div>								
+							</div>																					
+						</div>
+					</div>
+					<div class="panel-footer">
+						<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" 
+							title="Tips" 
+							data-content="Salir con amigos, Reuniones en Casa">
+							10% luego de quitar el ISR
+						</a>						
+					</div>										
+				</div>																
+				<!-- _Entretenimiento -->
+				
+					
+				<!-- _Vivienda -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"> Vivienda </h3>
+					</div>
+					<div class="panel-body">				
+						<div class="row">			
+							<div class="col-xs-6">
+								<div class="input-group">							
+									<input id="_Vivienda" readonly type="text" class="form-control" data-toggle="_Vivienda" title="Vivienda">
+								</div>										
+							</div>
+							<div class="col-xs-6">
+								<div class="well well-sm">
+									<input id="slider_Vivienda" type="text" onchange="calcular_Todo()"/> 
+								</div>								
+							</div>																					
+						</div>
+					</div>
+					<div class="panel-footer">
+						<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" 
+							title="Tips" 
+							data-content="Obtener credito en bancos">
+							20% luego de quitar el ISR
+						</a>																		
+					</div>
+				</div>																
+				<!-- _Vivienda -->
+
+				<!-- _Ahorro -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"> Ahorro </h3>
+					</div>
+					<div class="panel-body">				
+						<div class="row">			
+							<div class="col-xs-6">
+								<div class="input-group">							
+									<input id="_Ahorro" readonly type="text" class="form-control" data-toggle="_Ahorro" title="Ahorro">
+								</div>										
+							</div>
+							<div class="col-xs-6">
+								<div class="well well-sm">
+									<input id="slider_Ahorro" type="text" onchange="calcular_Todo()"/> 
+								</div>								
+							</div>																					
+						</div>
+					</div>
+					<div class="panel-footer">
+						<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" 
+							title="Tips" 
+							data-content="Domicilia tu ahorro, Cambia el porcentaje cada mes, Sube el porcentaje cada mes">
+							10% luego de quitar el ISR
+						</a>						
+					</div>
+				</div>																
+				<!-- _Ahorro -->
+				
+				<!-- _Transporte -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"> Transporte </h3>
+					</div>
+					<div class="panel-body">				
+						<div class="row">			
+							<div class="col-xs-6">
+								<div class="input-group">							
+									<input id="_Transporte" readonly type="text" class="form-control" data-toggle="_Transporte" title="Transporte">
+								</div>										
+							</div>
+							<div class="col-xs-6">
+								<div class="well well-sm">
+									<input id="slider_Transporte" type="text" onchange="calcular_Todo()"/> 
+								</div>								
+							</div>																					
+						</div>
+					</div>
+					<div class="panel-footer">
+						<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" 
+							title="Tips" 
+							data-content="Usar transporte público, Adquirir un vehiculo de bajo consumo de gasolina">
+							15% luego de quitar el ISR
+						</a>						
+					</div>															
+				</div>																
+				<!-- _Transporte -->
+								
+			</div>
+			<!-- Columna 1 -->
+
+			<!-- Columna 2 -->
+			<div class="col-xs-6 col-sm-4">
+  
+				<div id="anime-demo">
+					<div class="moneda"></div>
+					<div class="moneda"></div>
+					<div class="moneda"></div>
+					<div class="moneda"></div>
+					<div class="moneda"></div>
+				</div>  					
+				
+			</div>
+			<!-- Columna 2 -->
+			
+		</div>
+		<!-- Cuerpo -->	  
+		
+		<div class="row">
+		  <div class="col-xs-6 col-sm-4"></div>
+		  <div class="col-xs-6 col-sm-4">
+
+			<button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
+			  +
+			</button>								
+			
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Agregar Concepto de Gasto</h4>
+				  </div>
+				  <div class="modal-body">
+					  
+					<form role="form">
+						<div class="form-group">
+							<label for="conceptoName">Concepto</label>
+							<select class="form-control" id="nombre_concepto">
+							  <option value="Vestido_y_Calzado">Vestido y Calzado</option>
+							  <option value="Servicios_de_Casa">Servicios de Casa</option>
+							  <option value="Cuidados_de_la_Salud">Cuidados de la Salud</option>
+							  <option value="Transporte_y_Comunicaciones">Transporte y Comunicaciones</option>
+							  <option value="Educación">Educación</option>
+							</select>												
+						</div>					
+
+						<div class="row">			
+							<div class="col-xs-6">
+								<div class="input-group">							
+									<input id="_Concepto" readonly type="text" class="form-control" data-toggle="_Concepto" title="Concepto">
+								</div>										
+							</div>
+							<div class="col-xs-6">
+								<div class="well well-sm">
+									<input id="slider_Concepto" type="text"/> 
+								</div>								
+							</div>																					
+						</div>
+					  			  					  
+					</form>					  
+					  
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<button onclick="Agrega_Concepto('nombre_concepto','_Concepto')" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->			
+			
+		  </div>
+		  <div class="col-xs-6 col-sm-4"></div>
+		</div>		
+		
+		
+		<!-- Site footer -->
+		<div class="footer">
+			<p>&copy; 2018</p>
+		</div>
+
+	</div>
+	<!-- Contenedor Principal -->		
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquerys.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+	<!-- accounting.js -->
+    <script src="../js/accounting.js" type="text/javascript"></script>
+    <!-- anime.js -->
+    <script src="anime.min.js" type="text/javascript"></script>    
+    <!-- Code RUN -->    	
+    <script src="code.js" type="text/javascript"></script>
+    
+	<script src="../js/bootstrap-slider.js"></script>
+	<script src="../js/bootstrap-slider.min.js"></script>
+  </body>
+</html>

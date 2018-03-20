@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Demo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+	<div class="container">
+		
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<h2>Comparativo Compró o Rento?</h2>
+				</div>
+			</div>
+		</nav>	
+	
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+		
+		<div class="row">
+			<div class="col-xs-12 col-md-8">
+				<!-- Data y Gráfica COSTO-->
+				<div class="row">
+					<h3>Precio de la Casa</h3>
+					<div class="col-md-9 col-md-push-3">
+							<div id="chartCostoCasa" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_costocasa" type="text"/> 
+							</div>							
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="input-group">
+						  <input id="costoc" type="text" class="form-control">
+						</div>					
+					</div>
+				</div>
+				<!-- Data y Gráfica -->
+				<!-- Data y Gráfica TIEMPO-->
+				<div class="row">
+					<h3>Tiempo Estimado de Estancía</h3>
+					<div class="col-md-9 col-md-push-3">
+							<div id="chartEstancia" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_estancia" type="text"/>
+							</div>
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="input-group">
+						  <input id="tiempoe" type="text" class="form-control">
+						  <span class="input-group-addon">años</span>
+						</div>					
+					</div>
+				</div>
+				<!-- Data y Gráfica -->
+				<!-- Data y Gráfica HIPOTECA-->
+				<div class="row">
+					<h3>Hipoteca</h3>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartTIAF" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_tiaf" type="text"/>
+							</div>
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="tasadeinteres" type="text" class="form-control">
+							  <span class="input-group-addon">%</span>
+							</div>
+							<label class="control-label">Tasa de interés anual Fija</label>
+						</div>
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartEnganche" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_enganche" type="text"/>
+							</div>
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="enganche" type="text" class="form-control">
+							</div>					
+							<label class="control-label">Enganche</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartPlazo" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_plazo" type="text"/>
+							</div>
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="plazo" type="text" class="form-control">
+							  <span class="input-group-addon">años</span>
+							</div>					
+							<label class="control-label">Plazo</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartApertura" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_apertura" type="text"/>
+							</div>
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="comisionapertura" type="text" class="form-control">
+							  <span class="input-group-addon">%</span>
+							</div>					
+							<label class="control-label">Comisión de apertura</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartEscrituras" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_escrituras" type="text"/>
+							</div>
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="costoescrituras" type="text" class="form-control">
+							  <span class="input-group-addon">%</span>
+							</div>					
+							<label class="control-label">Costo de escrituración</label>
+						</div>					
+					</div>
+				</div>
+				<!-- Data y Gráfica -->
+				<!-- Data y Gráfica PLUSVALIA-->
+				<div class="row">
+					<h3>Plusvalía de la Casa</h3>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartIncrementoCasa" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_incrementocasa" type="text"/>
+							</div>							
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="incrementocasa" type="text" class="form-control" >
+							  <span class="input-group-addon">%</span>
+							</div>					
+							<label class="control-label">Incremento anual del precio de la casa</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartIncrementoRenta" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_incrementorenta" type="text"/>
+							</div>							
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="incrementorenta" type="text" class="form-control" >
+							  <span class="input-group-addon">%</span>
+							</div>					
+							<label class="control-label">Incremento anual de la renta</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartTasa" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_tasa" type="text"/>
+							</div>							
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="tasa" type="text" class="form-control" >
+							  <span class="input-group-addon">%</span>
+							</div>					
+							<label class="control-label">Tasa que te paga el banco (aprox. cetes)</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartInflacion" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_inflacion" type="text"/>
+							</div>							
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="inflacion" type="text" class="form-control" >
+							  <span class="input-group-addon">%</span>
+							</div>					
+							<label class="control-label">Inflación estimada</label>
+						</div>											
+					</div>
+				</div>
+				<!-- Data y Gráfica -->
+				<!-- Data y Gráfica IMPUESTOS-->
+				<div class="row">
+					<h3>Impuestos</h3>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartImpuestosVentaCasa" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_impuestoventacasa" type="text"/>
+							</div>							
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="impuestoventacasa" type="text" class="form-control" >
+							  <span class="input-group-addon">%</span>
+							</div>					
+							<label class="control-label">Impuestos sobre la propiedad por venta de la casa</label>
+						</div>				
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartDeducirIntereses" style="height: 300px; width: 100%;"></div>
+					</div>
+					<div class="col-md-3 col-md-pull-9">							
+						<div class="well well-sm">
+							<select id="deducirintereses" class="form-control input-sm">
+								<option>Si</option>
+								<option>No</option>
+							</select>							
+							<label class="control-label">Deducirá intereses fiscalmente</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartTasaImpuestos" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_tasaimpuestos" type="text"/>
+							</div>							
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="tasaimpuestos" type="text" class="form-control" >
+							  <span class="input-group-addon">%</span>
+							</div>					
+							<label class="control-label">Tasa de Impuestos efectiva pagada (para deducir)</label>
+						</div>											
+					</div>
+				</div>
+				<!-- Data y Gráfica -->
+				<!-- Data y Gráfica COSTOVENTA-->
+				<div class="row">
+					<h3>Costos de Vender la Casa</h3>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartCostoVentaCasa" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_costoventacasa" type="text"/>
+							</div>							
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="input-group">
+						  <input id="costoventacasa" type="text" class="form-control" >
+						  <span class="input-group-addon">%</span>
+						</div>					
+					</div>
+				</div>
+				<!-- Data y Gráfica -->
+				<!-- Data y Gráfica COSTOMANTENIMIENTO-->
+				<div class="row">
+					<h3>Costos de Mantenimiento</h3>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartCostoMantenimiento" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_costomantenimiento" type="text"/>
+							</div>														
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="well well-sm">
+							<div class="input-group">
+							  <span class="input-group-addon">$</span>
+							  <input id="costomantenimiento" type="text" class="form-control" >
+							  <span class="input-group-addon">.00</span>
+							</div>					
+							<label class="control-label">Mantenimiento / renovación 1er año de la casa</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartMatenimientoAnual" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_mantenimientoanual" type="text"/>
+							</div>														
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <span class="input-group-addon">$</span>
+							  <input id="mantenimientoanual" type="text" class="form-control" >
+							  <span class="input-group-addon">.00</span>
+							</div>					
+							<label class="control-label">Mantenimiento anual de la casa</label>
+						</div>					
+					</div>
+				</div>
+				<!-- Data y Gráfica -->
+				<!-- Data y Gráfica RENTA-->
+				<div class="row">
+					<h3>Renta</h3>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartMesesDeposito" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_mesesdeposito" type="text"/>
+							</div>														
+					</div>
+					<div class="col-md-3 col-md-pull-9">
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="mesesdeposito" type="text" class="form-control" >
+							  <span class="input-group-addon">meses</span>
+							</div>					
+							<label class="control-label">Meses de depósito inicial</label>
+						</div>			
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartRentaMensual" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_rentamensual" type="text"/>
+							</div>														
+					</div>
+					<div class="col-md-3 col-md-pull-9">														
+						<div class="well well-sm">
+							<div class="input-group">
+							  <input id="rentamensual" type="text" class="form-control" >
+							</div>					
+							<label class="control-label">Renta mensual de habitación rentada</label>
+						</div>					
+					</div>
+					<div class="col-md-9 col-md-push-3">
+							Grafica
+							<div id="chartMantenimientoMensual" style="height: 300px; width: 100%;"></div>
+							<div class="well">
+								<input id="slider_mantenimientomensual" type="text"/>
+							</div>														
+					</div>
+					<div class="col-md-3 col-md-pull-9">						
+						<div class="well well-sm">
+							<div class="input-group">
+							  <span class="input-group-addon">$</span>
+							  <input id="mantenimientomensual" type="text" class="form-control" >
+							  <span class="input-group-addon">.00</span>
+							</div>					
+							<label class="control-label">Mantenimiento mensual comunual de habitac. rentada</label>
+						</div>					
+					</div>
+				</div>
+				<!-- Data y Gráfica -->
+			</div>
+			<div class="col-xs-6 col-md-4">
+
+				<!-- Resultado -->
+				
+				<div id="g-fixed-container">
+
+				<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading"><h4>Resultado</h4></div>
+				<div class="panel-body">
+					<div class="alert alert-success" role="alert">SE DEBE COMPRAR</div>
+				</div>
+					<!-- Table -->
+					<div class="table-responsive">
+					<table class="table table-striped">
+					<thead>
+						<tr>
+							<th id="costotiempo">Costo despues de 9 años</th>
+							<th>Renta</th>
+							<th>Compra</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Monto de crédito</td>
+							<td id="montocreditoR">0.0</td>
+							<td id="montocredito">0.0</td>
+						</tr>
+						<tr>
+							<td>Pagos iniciales</td>
+							<td id="pagoinicialR">0.0</td>
+							<td id="pagoinicial">0.0</td>
+						</tr>
+						<tr>
+							<td>Depósito inicial</td>
+							<td id="deposito">0.0</td>
+							<td id="depositoC">0.0</td>
+						</tr>
+						<tr>
+							<td><b>Total</b></td>
+							<td id="totalRenta">0.0</td>
+							<td id="totalCompra">0.0</td>
+						</tr>
+					</tbody>
+					</table>				
+					</div>
+					
+				</div>
+				<!-- Fin Resultado -->
+
+				<!-- Información -->				
+				<div class="panel panel-info">
+      				<div class="panel-heading">Fuentes de los datos</div>
+      				<div class="panel-body">
+						Laboris duis eiusmod amet incididunt amet Lorem elit nisi anim reprehenderit velit proident non do. Laborum aliquip laborum et sunt laboris labore tempor sint excepteur eiusmod ut. Mollit consectetur consectetur consectetur velit dolor voluptate ad. Sit sunt duis tempor cillum labore enim qui irure consequat ipsum fugiat elit cupidatat. Sint sit occaecat labore culpa. Velit elit consequat ad sunt dolor. Nulla elit enim proident aute commodo reprehenderit cillum consequat elit in elit velit.
+					</div>
+    			</div>				
+				<!-- Fin Información -->
+
+				</div>
+				
+			</div>
+		</div>	
+
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+
+	</div>
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquerys.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<!-- accounting.js -->
+    <script src="js/accounting.js" type="text/javascript"></script>
+    <!-- CanvasJS -->    
+    <script src="js/canvasjs.min.js" type="text/javascript"></script>
+    <script src="codev1.js" type="text/javascript"></script>
+
+	<script src="js/bootstrap-slider.js"></script>
+	<script src="js/bootstrap-slider.min.js"></script>
+  </body>
+</html>
